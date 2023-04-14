@@ -1,0 +1,198 @@
+body{
+    margin : 0;
+    padding : 0;
+    font-family: sans-serif;
+    background: black;
+
+}
+.box{
+    width:300px;
+    height: 250px;
+    padding: 40px;
+    position : absolute;
+    top:40%;
+    left : 40%;
+    transition:  translate(-50%,-50%);
+    background:linear-gradient(to top,#ff0844 0%,#ffb199 100%);  background-size: 100%;
+    text-align: center;
+
+
+}
+
+
+box.h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+
+
+.box input[type = "text"],.box input[type = "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding:14px 10px ;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition :0.25s;
+
+
+} 
+
+
+
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 280px;
+    border-color: darkgreen;
+}
+
+.box input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding:14px 10px ;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition :0.25s;
+
+}
+
+
+.box input[type="submit"]:hover{
+    background:#2ecc71 ;
+}
+#submit{
+
+
+     border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding:14px 10px ;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition :0.25s; cursor: pointer; 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.navbar{
+    background:#131313 ;
+    height: 80px; 
+    display: flex;
+    justify-content:center;
+    font-size: 110%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    overflow:hidden;
+    
+}
+.navbar__container{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    max-width: 100px;
+    margin:0 auto ;
+    padding: 0 50%;
+    overflow:hidden;
+
+}
+
+#navbar_logo{
+    background-color:#ff8177;
+    background: linear-gradient(to top,#ff0844 0%,#ffb199 100%);  background-size: 100%;
+    -webkit-background-clip: text ;
+    -moz-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    -moz-text-fill-color:transparent;
+
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    overflow:hidden;
+    
+}
+
+.navbar__item{
+    height: 50%;
+}
+
+.navbar__links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height:100%;
+    
+}
+
+/*
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 1rem;
+    width:100%;
+    transition: all 0.3s  ease;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10% 20%;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right,#fcb845,#fd1d1d,#833ab4);
+    background: linear-gradient(to right,#fcb845,#fd1d1d,#833ab4);
+    color: #fff;
+    transition: all 0.3s ease;
+}*/
+
+.navbar__links:hover{
+    color:#9518fc;
+    transition: all 0.3s  ease;
+
+}
