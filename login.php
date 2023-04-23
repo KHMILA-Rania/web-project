@@ -3,8 +3,8 @@ $flag="";
 if (isset($_POST['submit'])){
     $name= $_POST['name'] ;
     $password=$_POST['password'];
-    $conn=mysqli_connect('localhost','root','','projet-blog');
-    $query=mysqli_query($conn,"INSERT INTO `createur`(`name`,`password`) VALUES ('$name','$password')");
+    $conn=mysqli_connect('localhost','root','','webProject');
+    $query=mysqli_query($conn,"INSERT INTO `blogger`(`name`,`password`) VALUES ('$name','$password')");
     if($query){
         $flag ='1';}
         else{
