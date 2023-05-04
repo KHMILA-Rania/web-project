@@ -28,6 +28,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Sign Up</h3>
+    <h4>Be a part of our Community </h4>
     <form method="post" action="">
         Full name <input type="text" name="name"/>
         <br><br>
