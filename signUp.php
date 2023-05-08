@@ -25,9 +25,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Join us !</title>
+   
 </head>
 <body>
+    <style>
+        body{
+          background-color:  -webkit-linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1));;
+          
+        }
+        h3{
+            color: black;
+        }
+        text{
+            color: white;
+        }
+        .form{
+            margin : 150px  550px;
+        }
+    </style>
+    <div class="form">
     <h3>Sign Up</h3>
     <h4>Be a part of our Community </h4>
     <form method="post" action="">
@@ -45,5 +62,6 @@
         <script >
             
             </script>
+            </div>
 </body>
 </html>

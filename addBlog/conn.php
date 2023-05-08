@@ -4,7 +4,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $content = $_POST['content'];
-    $owner = $_POST['owner'];
+    $prop = $_POST['owner'];
+    $conn=mysqli_connect('localhost','root','','webProject');
+
+if(!$conn){
+    die("Connection failed :" . mysqli_connect_error());
+}
+    $query=mysqli_query($conn,"SELECT * FROM blogger WHERE name = '$prop'");
+  
+    while ($row = mysqli_fetch_array($query)) {
+        $owner= $row['id'] . " - " . $row['name'] . "<br>";
+    }
 
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
