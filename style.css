@@ -191,9 +191,10 @@
 
 /*hero  section */
 .hero{
+   padding:0px;
     background: #000000;
     background: linear-gradient(to right,#161616,#000000);
-    /*padding: 200% 0;*/
+
 }
 
 .hero__container{
@@ -205,7 +206,7 @@
     margin: 0 auto;
     height: 90%;
     text-align:center ;
-    padding: 30%;
+    padding: 10%;
 }
 
 .hero__heading{
@@ -271,7 +272,7 @@
      z-index: 1;
      width: 100%;
      max-width: 1300px;
-     padding: 0 50px;
+     padding: 100px 50px;
  }
 
  .main__content{

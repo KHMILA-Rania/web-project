@@ -35,7 +35,9 @@
           
         }
         h3{
-            color: black;
+            color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:xx-large;
         }
         text{
             color: white;
@@ -43,11 +45,43 @@
         .form{
             margin : 150px  550px;
         }
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  background-color: green;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
     </style>
     <div class="form">
     <h3>Sign Up</h3>
     <h4>Be a part of our Community </h4>
-    <form method="post" action="">
+    <form method="post" action="" >
         Full name <input type="text" name="name"/>
         <br><br>
         Phone number <input type="text" name="phone"/>

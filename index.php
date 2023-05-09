@@ -31,12 +31,12 @@
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#services" class="navbar__links" id="services-page">
-                        Services
+                    <a href="../signIn/signIn.php" class="navbar__links" id="services-page">
+                        Sign In
                     </a>
                 </li>
                 <li class="navbar__btn">
-                    <a href="login.html" class="button" id="signup">
+                    <a href="signUp.php" class="button" id="signup">
                         Sign Up
                     </a>
                 </li>
@@ -63,7 +63,7 @@
             </div>
             <div class="main__content">
                 <h1>What do we do ?</h1>
-                <h2>we help businesses scale</h2>
+                <h2>We give you the space to share your thoughts</h2>
                 <p>Schedule a call to learn more about our services</p>
                 <button class="main__btn">
                     <a href="#">Schedule a call</a>
@@ -72,23 +72,13 @@
         </div>
     </div>
     <!-- Services section -->
+    <hr style="height:5px;
+  border-width:0;
+  background-color:violet;">
 
-    <div class="services" id="sevices">
-        <h1>Our Services </h1>
-        <div class="services__wrapper">
-
-      <a href="addBlog/listblog.php">  <input type="button" value="view all blogs " name="viewblogs"></a>
-       
-          <!--  <div class="services__card">
-                <h2>Cup of Jo</h2>
-                <p>Lifestyle Blog & Fashion Blog Example</p>
-                <div class="services__btn">3
-                    <a href="JoBlog.html">
-                        <button>Read more</button>
-                    </a></div>
-            </div>-->
-        </div>
-
+    
+        
+        
 
        
 <!--
@@ -139,7 +129,7 @@
                 <h2>Sign up today </h2>
                 <p>See what makes us different</p>
                 <button class="main__btn">
-                    <a href="login.html">Sign up </a>
+                    <a href="../addBlog/listBlog.php">See all blogs </a>
                 </button>
             </div>
         </div>

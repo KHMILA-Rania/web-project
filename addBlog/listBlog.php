@@ -2,15 +2,23 @@
 include ("blog.php");
 
 $conn = mysqli_connect('localhost','root', '', 'webProject');
-$query="select * from blog"; 
-$result=mysqli_query($conn,$query); 
-?> 
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$query = "select * from blog";
+$result = mysqli_query($conn, $query); 
+
+if ($result) {
+?>
+
 <!DOCTYPE html> 
 <html> 
 	<head> 
 		<title> BlogIt : List of blogs  </title> 
         <style>
-body {
+        body {
   background-color: -webkit-linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1));;
   margin: 0;
   padding: 0;
@@ -35,10 +43,11 @@ html,
   background: linear-gradient(to top, rgba(205, 156, 242, 1), rgba(246, 243, 255, 1))
 }
 table{
-    border: 2px solid black;
-    padding: 30px;
+    border: 5px solid black;
+    padding: 70px;
     margin:70px;
     width: 90%;
+    height: 100%;
     
 }
 
@@ -48,11 +57,12 @@ table th {
   white-space: nowrap;
   overflow: hidden;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid ;
+  color: black;
 }
 tbody td {
   font-weight: 500;
-  color: #999999;
+
 }
 table tr {
     padding: 20;
@@ -60,68 +70,96 @@ table tr {
     width: 50%;
 
 }
-
+#delete{
+  background-color:cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+}
 .table-responsive{
     overflow: auto;
 }
-
         </style> 
 	</head> 
 	<body> 
 
-
     <section class="intro">
-  <div class="gradient-custom-1 h-100">
-    <div class="mask d-flex align-items-center h-100">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="table-responsive bg-white">
-              <table class="table mb-0">
-                <thead>
-                <tr> 
-		<th colspan="4"><h2>List of blogs <br> Have fun reading !</h2></th> 
-		</tr> 
-                </thead>
-                <tbody>
-                <th> Title </th> 
-			  <th> Description </th> 
-			  <th> file </th> 
-			  <th> owner </th> 
-			  
-		</tr> 
+        <div class="gradient-custom-1 h-100">
+            <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="table-responsive bg-white">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr> 
+                                            <th colspan="5"><h2>List of blogs <br> Have fun reading !</h2></th> 
+                                        </tr> 
+                                    </thead>
+                                    <tbody>
+                                        <th> Title </th> 
+                                        <th> Description </th> 
+                                    
+                                        <th> owner </th> 
+                                        <th> Read more </th>
+                                        <th> Action </th> 
+                                        
 
-        <?php while($rows=mysqli_fetch_assoc($result)) 
-		{ 
-		?> 
-		<tr>
-		<td><?php echo $rows['title']; ?></td> 
-		<td><?php echo $rows['description']; ?></td> 
-		<td><?php echo $rows['file']; ?></td> 
-        <?php 
-        $r= $rows['owner']; 
-        $q=mysqli_query($conn,"select name from blogger where id='$r'");?></td> 
-	 <td><?php if ($row = mysqli_fetch_assoc($q)) {
-  echo $row['name'];
-}
-     mysqli_free_result( $q); ?>	
-    </tr> 
-	<?php 
-               } 
-          ?> 
-                 
-                   
-               
-                </tbody>
-              </table>
+                                        </tr> 
+
+                                        <?php while($rows=mysqli_fetch_assoc($result)) { ?> 
+                                        <tr>
+                                            <td><?php echo $rows['title']; ?></td> 
+                                            <td><?php echo $rows['description']; ?></td> 
+                                         
+                                            <td><?php 
+                                                $r = $rows['owner']; 
+                                                $q = mysqli_query($conn, "select name from blogger where id='$r'");
+                                                if ($row = mysqli_fetch_assoc($q)) {
+                                                    echo $row['name'];
+                                                }
+                                                mysqli_free_result($q); 
+                                            ?></td> 
+                                             <td> <a href="Content.php">Get content </a>
+                                        
+                                            <td>
+                                                <form method="POST">
+                                                    <input type="hidden" name="blog_id" value="<?php echo $rows['id']; ?>">
+                                                    <button type="submit" name="delete" id="delete">Delete</button>
+                                                </form>
+                                            </td>
+                                            </tr
+                                           
+                                        <?php } ?> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    </body>
+</html>
 
+<?php
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
 
+//mysqli_close($conn);
 
+if(isset($_POST['delete'])){
+    $blog_id = $_POST['blog_id'];
+    $query = "DELETE FROM blog WHERE id = $blog_id";
+    $result = mysqli_query($conn, $query);
+    if($result) {
+        echo "<script> window.location.assign('listBlog.php'); </script>";
+    } else {
+        echo "Error deleting blog: " . mysqli_error($conn);
+    }
+}
+?>
