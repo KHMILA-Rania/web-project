@@ -1,6 +1,6 @@
 <?php
 include ("blog.php");
-
+$id='';
 $conn = mysqli_connect('localhost','root', '', 'webProject');
 
 if (!$conn) {
@@ -108,9 +108,11 @@ table tr {
 
                                         </tr> 
 
-                                        <?php while($rows=mysqli_fetch_assoc($result)) { ?> 
+                                        <?php while($rows=mysqli_fetch_assoc($result)) {
+                                          ?> 
                                         <tr>
-                                            <td><?php echo $rows['title']; ?></td> 
+                                            <td><?php 
+                                            echo $rows['title']; ?></td> 
                                             <td><?php echo $rows['description']; ?></td> 
                                          
                                             <td><?php 
@@ -121,7 +123,7 @@ table tr {
                                                 }
                                                 mysqli_free_result($q); 
                                             ?></td> 
-                                             <td> <a href="Content.php">Get content </a>
+                                             <td> <a href="content.php" >Get content </a></td>
                                         
                                             <td>
                                                 <form method="POST">

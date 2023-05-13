@@ -55,17 +55,19 @@ if(!$conn){
 
             if ($stmt->affected_rows > 0) {
                 echo "New record created successfully.";
+                header("Location: listBlog.php");
             } else {
                 echo "Error: " . $stmt->error;
             }
 
-            // Close the database connection
-            $conn->close();
+            
+            
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
     } else {
         echo "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
     }
+
 }
 ?>

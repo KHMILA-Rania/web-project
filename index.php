@@ -10,9 +10,20 @@
 </head>
 <body>
     <!--NAVBAR SECTION-->
+    <style>
+        .navbar_container {
+  display: flex;
+  justify-content: flex-start;  /* This aligns the items to the left */
+  align-items: center;          /* This centers the items vertically */
+}
+
+#navbar_logo {
+  margin-right: auto;           /* This pushes the logo to the left */
+}
+    </style>
     <nav class="navbar">
         <div class="navbar_container">
-            <a href="#home" id="navbar_logo">COLOR</a>
+            <a href="#home" id="navbar_logo">BlogIt</a>
             <div class="navbar_toggle" id="mobile_menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -43,6 +54,9 @@
             </ul>
         </div>
     </nav>
+
+
+    
     <!--Hero section-->
     <div class="hero" id="home">
         <div class="hero__container">
@@ -136,10 +150,7 @@
        
     </div>
 
-<!--<div class="main__img--container" >
-    <div class="main__img--card" id="card-2"> <i class="fas fa-users"></i>
-    </div>
-</div>-->
+
 </div>
 </body>
 </html>

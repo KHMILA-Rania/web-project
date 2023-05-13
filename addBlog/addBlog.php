@@ -29,26 +29,9 @@
       
        
       
-        <input  id="getBlog" type="submit" value="Add blog">
+       <a href="../addBlog/listBlog.php" ><input  id="getBlog" type="submit" value="Add blog"><?php   ?></a>
       </form>
-      <script> 
-            var getBlogBtn=document.getElementById("getBlog");
-            getBlogBtn.addEventListener("click",function(){
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "ViewBlog.php", true);
-
-                xhr.onload=function(){
-                    if(this.status==200){
-                        var blog= JSON.parse(this.responseText);
-                    }
-                };
-                xhr.send();
-            });
-            
-            
-
-
-      </script>
+     
       
       
     
